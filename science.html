@@ -1,25 +1,62 @@
 <!DOCTYPE html>
-
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic interest</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <h1>Учебные интересы студента</h1>
-    <br>
-    <p>Предметы, интересующие студента:</p>
-    <ul>
-        <li>Технологии программирования</li>
-        <li>Основы языка Java</li>
-        <li>Веб-технологии</li>
-        <li>Операционные системы</li>
-        <li>Дискретная математика</li>
-        <li>Нейронные сети и их приложения</li>
-    </ul>
-    <div class="science_img"><img src="images/tech1.png" alt="Tech" style="max-width: 20%; height: auto;"></div>
-    <div class="science_img"><img src="images/tech2.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
-    <div class="science_img"><img src="images/tech3.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
-    <br>
-    <div class="button"><a href="index.html">Назад</a></div>
-    <div class="button"><a href="hobby.html">Хобби студента</a></div>
+
+    <div class="floating-nav">
+        <div class="button"><a href="index.html">На главную</a></div>
+        <div class="button"><a href="hobby.html">Мои хобби</a></div>
+    </div>
+
+    <div class="main-content">
+        <h1>Мои учебные интересы</h1>
+
+        <p>Я учусь на 3-м курсе специальности "Прикладная информатика" и стараюсь глубоко разбираться в том, что мне действительно интересно. Вот основные направления, которые меня привлекают:</p>
+
+        <ul class="science-list">
+            <li><strong>Технологии программирования</strong> — изучаю современные подходы к разработке, паттерны проектирования и лучшие практики написания кода.</li>
+            <li><strong>Основы языка Java</strong> — активно осваиваю Java, пишу учебные проекты, знакомлюсь с JUnit для модульного тестирования.</li>
+            <li><strong>Веб-технологии</strong> — владею HTML и CSS на уровне профессиональной вёрстки, работаю с WordPress, планирую углубляться в JavaScript и фреймворки.</li>
+            <li><strong>Операционные системы</strong> — интересуюсь устройством ОС, работой с командной строкой, Docker и виртуализацией.</li>
+            <li><strong>Дискретная математика</strong> — люблю логику, комбинаторику и теорию графов, которые лежат в основе алгоритмов.</li>
+            <li><strong>Нейронные сети и их приложения</strong> — хочу разобраться в машинном обучении, уже работала с Google Colab и Pandas для обработки данных.</li>
+        </ul>
+
+        <div class="science-extra">
+            <h3>Что я уже умею и чем горжусь</h3>
+            <ul>
+                <li>Разработала четыре сайта: интернет-магазин «DoorCraft», сайт турагентства «Dream», сайт для «Cyber Group» и сайт «Центра помощи семьям в кризисной ситуации».</li>
+                <li>На конференции «ЭНЕРГЕТИКА» (март 2024) защитила проект «Стартер» и получила диплом II степени.</li>
+                <li>Прошла производственную практику в «Cyber Group» (июль 2026), где вёрстала разделы «Партнеры» и «Проекты».</li>
+                <li>Участвовала в аудите и исправлении ошибок сайта благотворительного центра.</li>
+                <li>Готовлюсь к карьере в автоматизации тестирования — изучаю JUnit и тест-дизайн.</li>
+            </ul>
+        </div>
+
+        <div class="science-images">
+            <div class="science_img"><img src="images/tech1.png" alt="Tech" style="max-width: 20%; height: auto;"></div>
+            <div class="science_img"><img src="images/tech2.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
+            <div class="science_img"><img src="images/tech3.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <p>© 2026 Дусаева Кристина Родионовна</p>
+            <div class="social-links">
+                <span>Мои соцсети:</span>
+                <a href="@asterkris" class="social-link">Telegram</a> |
+                <a href="https://vk.ru/tea_chocolade" class="social-link">VK</a> |
+                <a href="https://github.com/MeAstrena" class="social-link">GitHub</a>
+            </div>
+            <p class="footer-note">Почта: youloveda@mail.ru | Телефоны: 8-978-598-60-81, 8-961-276-40-23</p>
+        </div>
+    </div>
+
 </body>
+</html>
