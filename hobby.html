@@ -19,23 +19,23 @@
         <ul class="hobby-list">
             <li>
                 <strong>Волейбол</strong>
-                <div class="hobby_img"><img src="images/volleyball.jpeg" alt="Волейбол" style="max-width: 20%; height: auto;"></div>
+                <div class="hobby_img"><img src="images/volleyball.jpeg" alt="Волейбол" onclick="openModal(this.src)" style="max-width: 20%; height: auto; cursor: pointer;"></div>
                 <p>Начала играть в колледже СевКИТиП с 16 лет, была в сборной. Сейчас это просто увлечение для души — играю в удовольствие, поддерживаю форму и встречаюсь с друзьями на площадке.</p>
             </li>
             <li>
                 <strong>K-pop танцы</strong>
-                <div class="hobby_img"><img src="images/k-pop.webp" alt="K-pop" style="max-width: 20%; height: auto;"></div>
+                <div class="hobby_img"><img src="images/k-pop.webp" alt="K-pop" onclick="openModal(this.src)" style="max-width: 20%; height: auto; cursor: pointer;"></div>
                 <p>Обожаю корейскую поп-культуру. Мои любимые группы: ITZY, Stray Kids, BTS, Aespa, NewJeans, (G)I-DLE, NMIXX, TWICE. Разучиваю каверы для себя дома.</p>
             </li>
             <li>
                 <strong>Диджитал рисование</strong>
-                <div class="hobby_img"><img src="images/digital.png" alt="digital" style="max-width: 20%; height: auto;"></div>
+                <div class="hobby_img"><img src="images/digital.png" alt="digital" onclick="openModal(this.src)" style="max-width: 20%; height: auto; cursor: pointer;"></div>
                 <p>Рисую в Adobe Photoshop и SAI Paint Tool 2. Создаю персонажей для своих игровых проектов, делаю иллюстрации и зарисовки по мотивам аниме и фэнтези. Мечтаю однажды оформить собственную 3D игру.</p>
             </li>
             <li>
                 <strong>Игры (хорроры, кооп, песочница, ММОРПГ)</strong>
-                <div class="hobby_img"><img src="images/game_horror.webp" alt="Game horror" style="max-width: 20%; height: auto;"></div>
-                <div class="hobby_img"><img src="images/game_coop.webp" alt="Game Coop" style="max-width: 20%; height: auto;"></div>
+                <div class="hobby_img"><img src="images/game_horror.webp" alt="Game horror" onclick="openModal(this.src)" style="max-width: 20%; height: auto; cursor: pointer;"></div>
+                <div class="hobby_img"><img src="images/game_coop.webp" alt="Game Coop" onclick="openModal(this.src)" style="max-width: 20%; height: auto; cursor: pointer;"></div>
                 <p>Обожаю сюжетные хорроры: Outlast, Resident Evil, Silent Hill, Amnesia. Люблю кооперативные приключения с друзьями (Dead by Daylight, Phasmophobia, Lethal Company), а также песочницы вроде Minecraft и ММОРПГ для общения. Игры помогают мне расслабиться и заодно потренировать логику и реакцию.</p>
             </li>
         </ul>
@@ -44,6 +44,10 @@
             <h3>Ещё я люблю</h3>
             <p>Читаю фэнтези и смотрю аниме — это мои главные источники вдохновения для рисования и игровых идей.</p>
         </div>
+    </div>
+
+    <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Увеличенное фото">
     </div>
 
     <div class="footer">
@@ -58,6 +62,18 @@
             <p class="footer-note">Почта: youloveda@mail.ru | Телефоны: 8-978-598-60-81, 8-961-276-40-23</p>
         </div>
     </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imageModal').classList.add('active');
+            document.getElementById('modalImage').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 
 </body>
 </html>

@@ -5,6 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic interest</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .science-images {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0 10px 0;
+        }
+        .science_img {
+            flex: 0 0 auto;
+        }
+        .science_img img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            cursor: pointer;
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(150, 185, 220, 0.3);
+            transition: transform 0.2s ease;
+        }
+        .science_img img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 700px) {
+            .science-images {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .science_img img {
+                max-height: 150px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -39,10 +75,14 @@
         </div>
 
         <div class="science-images">
-            <div class="science_img"><img src="images/tech1.png" alt="Tech" style="max-width: 20%; height: auto;"></div>
-            <div class="science_img"><img src="images/tech3.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
-            <div class="science_img"><img src="images/tech2.jpg" alt="Tech" style="max-width: 20%; height: auto;"></div>
+            <div class="science_img"><img src="images/tech1.png" alt="Tech" onclick="openModal(this.src)"></div>
+            <div class="science_img"><img src="images/tech2.jpg" alt="Tech" onclick="openModal(this.src)"></div>
+            <div class="science_img"><img src="images/tech3.jpg" alt="Tech" onclick="openModal(this.src)"></div>
         </div>
+    </div>
+
+    <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Увеличенное фото">
     </div>
 
     <div class="footer">
@@ -57,6 +97,21 @@
             <p class="footer-note">Почта: youloveda@mail.ru | Телефоны: 8-978-598-60-81, 8-961-276-40-23</p>
         </div>
     </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imageModal').classList.add('active');
+            document.getElementById('modalImage').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 
 </body>
 </html>

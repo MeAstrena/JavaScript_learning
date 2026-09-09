@@ -15,12 +15,19 @@
 
     <div class="main-content">
         <h1>Дусаева Кристина Родионовна</h1>
-        <p>Студентка 3 курса ИВТиПТ, специальность 09.03.03 "Прикладная информатика"</p>
-        <p>День рождения: 09.11.2006, 19 лет</p>
-        <div class="student_img"><img src="images/student.jpg" alt="Фото студента" style="max-width: 20%; height: auto;"></div>
+
+        <div class="student-section">
+            <div class="student-info">
+                <p>Студентка 3 курса ИВТиПТ, специальность 09.03.03 "Прикладная информатика"</p>
+                <p>День рождения: 09.11.2006, 19 лет</p>
+                <p>Родилась в Севастополе в 2006 году. С детства мечтала стать программистом и создавать игры. На протяжении всей жизни была предана своему выбору и в итоге, после 9 класса, поступила в Севастопольский колледж информационных технологий и промышленности в 2022 году на специальность 09.02.01 "Компьютерные системы и комплексы". Это было не то направление, которое она хотела изначально и потому, не окончив колледж, решила поступить в университет и выбор пал на ЮФУ, на специальность 09.03.03 "Прикладная информатика".</p>
+            </div>
+            <div class="student-img-wrapper">
+                <img src="images/student.jpg" alt="Фото студента" onclick="openModal(this.src)">
+            </div>
+        </div>
 
         <div class="bio-section">
-            <p>Родилась в Севастополе в 2006 году. С детства мечтала стать программистом и создавать игры. На протяжении всей жизни была предана своему выбору и в итоге, после 9 класса, поступила в Севастопольский колледж информационных технологий и промышленности в 2022 году на специальность 09.02.01 "Компьютерные системы и комплексы". Это было не то направление, которое она хотела изначально и потому, не окончив колледж, решила поступить в университет и выбор пал на ЮФУ, на специальность 09.03.03 "Прикладная информатика".</p>
             <p>Сейчас Кристина активно разрабатывает веб-приложения и изучает машинное обучение. Также увлекается дизайном интерфейсов и постоянно совершенствует свои навыки в Figma и Adobe Photoshop.</p>
             <p>В планах на ближайший год — пройти стажировку в IT-компании и разработать собственный pet-проект для автоматизации учебных процессов.</p>
             
@@ -49,10 +56,10 @@
             <div class="projects">
                 <h3>Основные проекты</h3>
                 <ul>
-                    <li>Интернет-магазин «DoorCraft»</li>
-                    <li>Сайт туристического агентства «Dream»</li>
-                    <li>Сайт компании «Cyber Group»</li>
-                    <li>Сайт «Центр помощи семьям в кризисной ситуации им. Священномученика Константина Верецкого»</li>
+                    <li>Интернет-магазин <a href="https://meastrena.github.io/DoorCraft/">«DoorCraft»</a></li>
+                    <li>Сайт туристического агентства <a href="https://meastrena.github.io/Dream/">«Dream»</a></li>
+                    <li>Сайт компании <a href="https://meastrena.github.io/Cybergroup_Project/">«Cyber Group»</a></li>
+                    <li>Сайт <a href="">«Центр помощи семьям в кризисной ситуации им. Священномученика Константина Верецкого»</a></li>
                 </ul>
             </div>
 
@@ -68,6 +75,10 @@
         </div>
     </div>
 
+    <div class="modal-overlay" id="imageModal" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Увеличенное фото">
+    </div>
+
     <div class="footer">
         <div class="footer-content">
             <p>© 2026 Дусаева Кристина Родионовна</p>
@@ -80,6 +91,21 @@
             <p class="footer-note">Email: youloveda@mail.ru | Телефоны: 8-978-598-60-81, 8-961-276-40-23</p>
         </div>
     </div>
+
+    <script>
+        function openModal(src) {
+            document.getElementById('imageModal').classList.add('active');
+            document.getElementById('modalImage').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 
 </body>
 </html>
