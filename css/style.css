@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+.name-hover {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.name-hover:hover {
+    transform: scale(1.2);
+}
+
 body {
     background-color: #ffffff;
     font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
