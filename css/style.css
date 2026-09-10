@@ -167,12 +167,11 @@ ul li strong {
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
     cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease,opacity 0.3s ease;
 }
 
 .student-img-wrapper:hover img {
-    filter: grayscale(70%) brightness(85%);
-    opacity: 0.75;
+    opacity: 0.35;
     transform: scale(1.03) rotate(180deg);
 }
 
@@ -218,12 +217,11 @@ ul li strong {
     height: auto;
     display: block;
     cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hobby_img:hover img {
-    filter: grayscale(70%) brightness(85%);
-    opacity: 0.75;
+    opacity: 0.35;
     transform: scale(1.03) rotate(180deg);
 }
 
@@ -279,12 +277,11 @@ ul li strong {
     cursor: pointer;
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.3);
-    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .science_img:hover img {
-    filter: grayscale(70%) brightness(85%);
-    opacity: 0.75;
+    opacity: 0.35;
     transform: scale(1.03) rotate(180deg);
 }
 
