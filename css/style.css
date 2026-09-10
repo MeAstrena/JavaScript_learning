@@ -4,6 +4,18 @@
     box-sizing: border-box;
 }
 
+.links {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    transform-origin: left center;
+}
+
+.links:hover {
+    transform: scale(1.2);
+}
+
 .name-hover {
     display: inline-block;
     transition: transform 0.3s ease;
