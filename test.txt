@@ -135,7 +135,7 @@ ul li strong {
 }
 
 .student-img-wrapper img {
-    max-width: 200px;
+    max-width: 400px;
     height: auto;
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
@@ -218,58 +218,12 @@ ul li strong {
     border: 1px solid #e2effa;
 }
 
+.achievements ul li::before,
 .skills ul li::before,
 .projects ul li::before,
 .personal-qualities ul li::before,
 .science-extra ul li::before {
     color: #4a8ec9;
-}
-
-.achievements-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 1rem;
-    background-color: #ffffff;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(150, 185, 220, 0.15);
-}
-
-.achievements-table thead {
-    background-color: #dcebf9;
-}
-
-.achievements-table th {
-    padding: 14px 18px;
-    text-align: left;
-    color: #1f4468;
-    font-weight: 600;
-    font-size: 1rem;
-    border-bottom: 2px solid #c0d9ef;
-}
-
-.achievements-table td {
-    padding: 14px 18px;
-    color: #1a2a3a;
-    vertical-align: top;
-    border-bottom: 1px solid #e2effa;
-    line-height: 1.55;
-}
-
-.achievements-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.achievements-table tbody tr:hover {
-    background-color: #f0f7ff;
-}
-
-.achievements-table td:first-child {
-    color: #1f4468;
-    font-weight: 600;
-    white-space: nowrap;
-    width: 160px;
 }
 
 .hobby-list li {
@@ -419,14 +373,5 @@ ul li strong {
     }
     .science_img img {
         max-height: 150px;
-    }
-    .achievements-table td:first-child {
-        white-space: normal;
-        width: auto;
-    }
-    .achievements-table th,
-    .achievements-table td {
-        padding: 10px 12px;
-        font-size: 0.95rem;
     }
 }
