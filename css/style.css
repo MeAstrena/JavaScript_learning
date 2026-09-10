@@ -8,6 +8,7 @@
     display: inline-block;
     transition: transform 0.3s ease;
     cursor: pointer;
+    transform-origin: left center;
 }
 .name-hover:hover {
     transform: scale(1.2);
@@ -28,7 +29,7 @@ body {
     background-color: rgba(190, 215, 240, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 16px 40px 16px 40px;
+    padding: 16px 40px;
     margin-bottom: 30px;
     border-bottom: 1px solid rgba(160, 195, 230, 0.3);
     display: flex;
@@ -140,36 +141,165 @@ ul li strong {
 }
 
 .student-img-wrapper {
+    position: relative;
     flex: 0 0 auto;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 18px;
 }
 
 .student-img-wrapper img {
     max-width: 200px;
     height: auto;
+    display: block;
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
 }
 
-.student-img-wrapper img:hover {
-    transform: scale(1.02);
+.student-img-wrapper:hover img {
+    filter: grayscale(70%) brightness(85%);
+    opacity: 0.75;
+    transform: scale(1.03) rotate(180deg);
 }
 
-.hobby_img img,
-.science_img img {
+.student-img-wrapper::after {
+    content: "Дусаева Кристина Родионовна";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.student-img-wrapper:hover::after {
+    opacity: 1;
+}
+
+.hobby_img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 18px;
+    margin: 8px 0 12px 0;
+}
+
+.hobby_img img {
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
-    margin: 8px 0 12px 0;
+    margin: 0;
     max-width: 100%;
     height: auto;
-    transition: transform 0.2s ease;
+    display: block;
     cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
 }
 
-.hobby_img img:hover,
-.science_img img:hover {
-    transform: scale(1.02);
+.hobby_img:hover img {
+    filter: grayscale(70%) brightness(85%);
+    opacity: 0.75;
+    transform: scale(1.03) rotate(180deg);
+}
+
+.hobby_img::after {
+    content: "Хобби";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.hobby_img:hover::after {
+    opacity: 1;
+}
+
+.science-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 10px 0;
+}
+
+.science_img {
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.science_img img {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    display: block;
+    cursor: pointer;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(150, 185, 220, 0.3);
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.science_img:hover img {
+    filter: grayscale(70%) brightness(85%);
+    opacity: 0.75;
+    transform: scale(1.03) rotate(180deg);
+}
+
+.science_img::after {
+    content: "Учебные интересы";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.science_img:hover::after {
+    opacity: 1;
 }
 
 .modal-overlay {
@@ -203,12 +333,12 @@ ul li strong {
 
 @keyframes fadeIn {
     from { opacity: 0; }
-    to { opacity: 1; }
+    to   { opacity: 1; }
 }
 
 @keyframes scaleIn {
     from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    to   { transform: scale(1);   opacity: 1; }
 }
 
 .bio-section {
@@ -310,34 +440,6 @@ ul li strong {
     padding: 18px 24px;
     border-radius: 20px;
     margin: 30px 0 10px 0;
-}
-
-.science-images {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0 10px 0;
-}
-
-.science_img {
-    flex: 0 0 auto;
-}
-
-.science_img img {
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
-    cursor: pointer;
-    border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(150, 185, 220, 0.3);
-    transition: transform 0.2s ease;
-}
-
-.science_img img:hover {
-    transform: scale(1.05);
 }
 
 .footer {
