@@ -5,7 +5,7 @@
 }
 
 .links {
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: inline-block;
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -32,6 +32,7 @@ body {
     color: #1a2a3a;
     line-height: 1.6;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .floating-nav {
@@ -167,7 +168,7 @@ ul li strong {
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
     cursor: pointer;
-    transition: transform 0.3s ease,opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .student-img-wrapper:hover img {
@@ -213,7 +214,7 @@ ul li strong {
     border-radius: 18px;
     box-shadow: 0 6px 20px rgba(150, 185, 220, 0.25);
     margin: 0;
-    max-width: 100%;
+    max-width: 200px;
     height: auto;
     display: block;
     cursor: pointer;
@@ -505,48 +506,200 @@ ul li strong {
     margin-top: 6px;
 }
 
+@media (max-width: 900px) {
+    .floating-nav {
+        padding: 14px 20px;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 10px 16px 24px 16px;
+    }
+
+    .science-images {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hobby_img img {
+        max-width: 40%;
+    }
+
+    .projects ul li a {
+        word-break: break-word;
+    }
+}
+
 @media (max-width: 700px) {
     .floating-nav {
         padding: 12px 16px;
         justify-content: center;
     }
+
     .button a {
         padding: 8px 18px;
         font-size: 0.9rem;
     }
+
     h1 {
         font-size: 1.8rem;
         padding-left: 14px;
     }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    ul li {
+        font-size: 0.98rem;
+        padding-left: 22px;
+    }
+
     .student-section {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
     }
+
     .student-img-wrapper img {
         max-width: 150px;
     }
-    .footer {
-        padding: 20px 16px;
+
+    .student-img-wrapper::after {
+        font-size: 14px;
+        padding: 6px;
     }
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+
+    .hobby-list li {
+        padding: 14px 16px 16px 16px;
+        margin-bottom: 22px;
     }
+
+    .hobby-list li strong {
+        font-size: 1.15rem;
+    }
+
+    .hobby_img img {
+        max-width: 60%;
+    }
+
+    .hobby_img::after {
+        font-size: 15px;
+    }
+
     .science-images {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
     }
+
     .science_img img {
         max-height: 150px;
     }
+
+    .science_img::after {
+        font-size: 15px;
+    }
+
     .achievements-table td:first-child {
         white-space: normal;
         width: auto;
     }
+
     .achievements-table th,
     .achievements-table td {
         padding: 10px 12px;
         font-size: 0.95rem;
+    }
+
+    /* Футер */
+    .footer {
+        padding: 20px 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-nav {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .button a {
+        padding: 7px 14px;
+        font-size: 0.85rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        padding-left: 12px;
+        border-left-width: 4px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .main-content {
+        padding: 8px 12px 20px 12px;
+        border-radius: 16px;
+    }
+
+    .student-img-wrapper img {
+        max-width: 120px;
+    }
+
+    .hobby_img img {
+        max-width: 80%;
+    }
+
+    .science-images {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .science_img img {
+        max-height: 180px;
+    }
+
+    /* Таблица: ещё компактнее */
+    .achievements-table th,
+    .achievements-table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Соц-ссылки в столбик, чтобы не «слипались» */
+    .social-links {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .social-links span {
+        margin-bottom: 4px;
+    }
+
+    .footer-note {
+        font-size: 0.85rem;
+        word-break: break-word;
     }
 }
