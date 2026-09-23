@@ -506,6 +506,137 @@ ul li strong {
     margin-top: 6px;
 }
 
+.footer-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-btn a {
+    display: inline-block;
+    background-color: #1f4468;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(31, 68, 104, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+}
+
+.footer-btn a:hover {
+    background-color: #2d5a87;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(31, 68, 104, 0.4);
+}
+
+.footer-btn a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(31, 68, 104, 0.3);
+}
+
+.screen-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px;
+    z-index: 10;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.screen-overlay.hidden {
+    display: none;
+}
+
+.screen-overlay h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.screen-overlay p {
+    color: #aaaaaa;
+    font-size: 1rem;
+    margin: 0;
+    max-width: 300px;
+}
+
+.screen-overlay button {
+    background: #27ae60;
+    color: #ffffff;
+    border: none;
+    padding: 14px 36px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 
+        0 5px 0 #1e8449,
+        0 8px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.screen-overlay button:active {
+    transform: translateY(4px);
+    box-shadow: 
+        0 1px 0 #1e8449,
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.screen-overlay.game-over h2 {
+    color: #e74c3c;
+    text-shadow: 0 0 15px rgba(231, 76, 60, 0.7);
+}
+
+.screen-overlay.game-over button {
+    background: #e74c3c;
+    box-shadow: 
+        0 5px 0 #a93226,
+        0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.screen-overlay.game-over button:active {
+    box-shadow: 
+        0 1px 0 #a93226,
+        0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.game-screen {
+    position: relative;
+}
+
+.game-message {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .footer-btn {
+        justify-content: center;
+        width: 100%;
+    }
+    .footer-btn a {
+        padding: 9px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 900px) {
     .floating-nav {
         padding: 14px 20px;
@@ -622,7 +753,6 @@ ul li strong {
         font-size: 0.95rem;
     }
 
-    /* Футер */
     .footer {
         padding: 20px 16px;
     }
@@ -681,14 +811,12 @@ ul li strong {
         max-height: 180px;
     }
 
-    /* Таблица: ещё компактнее */
     .achievements-table th,
     .achievements-table td {
         padding: 8px 10px;
         font-size: 0.9rem;
     }
 
-    /* Соц-ссылки в столбик, чтобы не «слипались» */
     .social-links {
         flex-direction: column;
         gap: 6px;
