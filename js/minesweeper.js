@@ -129,7 +129,14 @@ function attachEvents() {
         const r = parseInt(cell.dataset.row);
         const c = parseInt(cell.dataset.col);
 
+        let touchTimer = null;
+        let longPressFired = false;
+
         cell.onclick = function() {
+            if (longPressFired) {
+                longPressFired = false;
+                return;
+            }
             handleLeftClick(r, c);
         };
 
@@ -137,6 +144,29 @@ function attachEvents() {
             e.preventDefault();
             handleRightClick(r, c);
         };
+
+        cell.addEventListener('touchstart', function(e) {
+            longPressFired = false;
+            touchTimer = setTimeout(() => {
+                longPressFired = true;
+                handleRightClick(r, c);
+                if (navigator.vibrate) navigator.vibrate(30);
+            }, 500);
+        }, { passive: true });
+
+        cell.addEventListener('touchend', function(e) {
+            if (touchTimer) {
+                clearTimeout(touchTimer);
+                touchTimer = null;
+            }
+        });
+
+        cell.addEventListener('touchmove', function(e) {
+            if (touchTimer) {
+                clearTimeout(touchTimer);
+                touchTimer = null;
+            }
+        });
     });
 }
 
