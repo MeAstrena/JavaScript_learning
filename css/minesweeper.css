@@ -145,7 +145,7 @@
 
 .cell.flag {
     color: #e74c3c;
-    font-size: 1.0rem;
+    font-size: auto;
 }
 
 .cell.n1 { color: #1976d2; }
@@ -349,7 +349,7 @@
     }
     
     .cell {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
     
     .minesweeper-info {
@@ -364,6 +364,6 @@
 
 @media (max-width: 400px) {
     .cell {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
 }
