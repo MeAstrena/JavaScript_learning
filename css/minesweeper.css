@@ -121,7 +121,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1 rem;
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -145,7 +145,7 @@
 
 .cell.flag {
     color: #e74c3c;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
 }
 
 .cell.n1 { color: #1976d2; }
