@@ -38,7 +38,7 @@ function renderGamePage() {
     const startOverlay = createEl('div', { className: 'screen-overlay' });
     startOverlay.id = 'startOverlay';
     const startTitle = createEl('h2', { text: 'Змейка' });
-    const startHint = createEl('p', { text: 'Управление: стрелки или WASD. На телефоне — кнопки внизу.' });
+    const startHint = createEl('p', { text: 'Управление: стрелки или WASD. На телефоне - кнопки внизу.' });
     const startBtn = createEl('button', { text: 'Начать игру' });
     startBtn.onclick = () => startGame();
     startOverlay.appendChild(startTitle);
