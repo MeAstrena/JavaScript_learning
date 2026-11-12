@@ -44,7 +44,7 @@ function createFooter() {
     const snakeBtn = createEl('a', { href: 'snake.html', text: 'Играть в Змейку' });
     btnBlock.appendChild(snakeBtn);
 
-    const minesweeperBtn = createEl('a', { href: 'minesweeper.html', text: 'Играть в Сапёра' });
+    const minesweeperBtn = createEl('a', { href: 'saper.html', text: 'Играть в Сапёра' });
     btnBlock.appendChild(minesweeperBtn);
 
     content.appendChild(btnBlock);
